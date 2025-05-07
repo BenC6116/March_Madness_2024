@@ -86,12 +86,17 @@ Our gradient boosting implementation includes:
 - Cross-validation across multiple tournament years
 - Calibrated probability outputs with isotonic regression
 
-#### Neural Networks (`/notebooks/neural_networks/`)
-The deep learning approach features:
-- Multi-layer perceptron architecture optimized for tournament prediction
-- Dropout regularization to improve generalization
-- Custom loss functions prioritizing upset detection
-- Embedding layers for team identity representation
+### Neural Networks [`notebooks/neural_networks/`](notebooks/neural_networks/)
+
+Our deep learning model explores tournament prediction via a compact feedforward network trained on engineered team features.
+
+Key characteristics include:
+- A 3-layer Multi-Layer Perceptron (MLP) with ReLU activations
+- Dropout layers to mitigate overfitting, with dropout rates tuned experimentally
+- Binary cross-entropy loss, optimized using the Adam optimizer
+- Evaluation conducted through rolling cross-validation across multiple seasons
+- Final Brier Score: 0.19086, performing slightly worse than simpler models such as logistic regression
+- Based on empirical results, this model was excluded from the final ensemble due to underperformance in probability calibration
 
 #### Ensemble Methods (`/notebooks/ensemble/`)
 Our final prediction strategy combines:
