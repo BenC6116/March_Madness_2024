@@ -89,7 +89,6 @@ Our gradient boosting implementation includes:
 #### Neural Networks (`/notebooks/neural_networks/`)
 The deep learning approach features:
 - Multi-layer perceptron architecture optimized for tournament prediction
-- Hyperparameter tuning (documented in `nn_tuner_dir`)
 - Dropout regularization to improve generalization
 - Custom loss functions prioritizing upset detection
 - Embedding layers for team identity representation
