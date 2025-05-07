@@ -45,17 +45,19 @@ Next, you must also upload all the 9 csv prediction files in the directory `/pre
 
 ## Modeling Approach
 
-## 📊 Data Preparation and Exploration
+## Data Preparation and Exploration
 
 Initial exploration and feature understanding were conducted using the notebook [`notebooks/EDA/eda_march_madness.ipynb`](notebooks/EDA/eda_march_madness.ipynb).  
 This step focused on uncovering key patterns in historical tournament data and informing downstream feature engineering and model design.
 
 Key insights from our EDA include:
-- 📈 **Historical trends** in tournament outcomes, highlighting dominant seeds and common upset scenarios
-- 🧮 **Correlation analysis** between team-level statistical features and game outcomes
-- 🔁 **Season-to-season consistency** for metrics such as win percentage, point differentials, and strength of schedule
-- 🎯 **Feature importance visualizations** (e.g., SHAP values, permutation importance) to prioritize inputs for models
-- ⚠️ **Upset detection patterns** based on seed differences, recent form, and adjusted efficiency metrics
+- **Historical trends** in tournament outcomes, highlighting dominant seeds and common upset scenarios
+- **Correlation analysis** between team-level statistical features and game outcomes
+- **Season-to-season consistency** for metrics such as win percentage, point differentials, and strength of schedule
+- **Feature importance visualizations** (e.g., SHAP values, permutation importance) to prioritize inputs for models
+- **Upset detection patterns** based on seed differences, recent form, and adjusted efficiency metrics
+- **Empirical trial-and-error testing** of specific features (e.g., seed gap, recent win streaks, and adjusted efficiency margin) to observe their isolated impact on predicted win probabilities
+
 
 These findings directly shaped the preprocessing pipeline and model input schema, helping us build interpretable and effective predictive models.
 
