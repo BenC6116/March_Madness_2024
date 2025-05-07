@@ -1,14 +1,26 @@
-# March Machine Learning Mania 2024
+# 🏀 March Machine Learning Mania 2024
 
-## Project Overview
-This repository contains machine learning models and analysis for the March Machine Learning Mania 2024 competition hosted on Kaggle. The project predicts NCAA Men's Basketball Tournament outcomes using historical tournament data, team statistics, and advanced machine learning techniques to forecast game winners and tournament progression.
+## 🔍 Project Overview
+This repository presents a full data science pipeline developed for the [Kaggle March Machine Learning Mania 2024](https://www.kaggle.com/competitions/march-machine-learning-mania-2024) competition.  
+The objective is to predict outcomes of NCAA Men's Basketball Tournament games using a combination of historical data, statistical features, and diverse machine learning techniques.
 
-## Competition Context
-March Machine Learning Mania challenges data scientists to predict the outcomes of the NCAA Men's Basketball Tournament. The competition evaluates predictions using log loss scoring against actual tournament results, rewarding both accurate predictions and appropriate confidence levels.
+Key elements of the project include:
+- Preprocessing pipeline in [`scripts/pre_processing.py`](scripts/pre_processing.py)
+- Exploratory Data Analysis in [`notebooks/EDA/`](notebooks/EDA/)
+- Model development using Logistic Regression, Random Forest, XGBoost, and Neural Networks
+- Ensemble modeling strategy combining predictions across models
+- Evaluation using **log loss** and **Brier score**, the official metrics of the competition
 
-## Repository Structure
+Our final ensemble model outperformed all single models individually, demonstrating the power of stacked generalization and weighted averaging for tournament outcome prediction.
 
-```
+## 🏆 Competition Context
+The **March Machine Learning Mania** competition challenges participants to forecast the results of NCAA Men's Basketball Tournament games.  
+Participants submit win probabilities for each potential matchup, and are evaluated using the **log loss** metric — which rewards both accurate predictions and appropriate confidence levels.
+
+The tournament’s unpredictable nature, with frequent upsets and underdog victories, makes this a complex and rewarding modeling challenge, ideal for testing robust classification approaches under real-world uncertainty.
+
+## 📁 Repository Structure
+```bash
 .
 ├── data/                         # Tournament data
 │   └── march-machine-learning-mania-2024.zip
@@ -16,14 +28,13 @@ March Machine Learning Mania challenges data scientists to predict the outcomes 
 ├── notebooks/                    # Jupyter notebooks for analysis and modeling
 │   ├── EDA/                      # Exploratory Data Analysis
 │   ├── ensemble/                 # Ensemble modeling approaches
-│   ├── logistic_regression/      # Logistic Regression models
-│   ├── neural_networks/          # Neural Network models
-│   │   └── nn_tuner_dir/         # Neural Network hyperparameter tuning
-│   ├── random_forest/            # Random Forest models
-│   └── xgboost/                  # XGBoost models
+│   ├── logistic_regression/     # Logistic Regression models
+│   ├── neural_networks/         # Neural Network models
+│   ├── random_forest/           # Random Forest models
+│   └── xgboost/                 # XGBoost models
 └── scripts/                      # Utility scripts
-    └── pre_processing.py         # Data preprocessing functionality
-```
+    └── pre_processing.py        # Data preprocessing functionality
+
 
 
 ## Running the Project
@@ -34,13 +45,20 @@ Next, you must also upload all the 9 csv prediction files in the directory `/pre
 
 ## Modeling Approach
 
-### Data Preparation and Exploration
-Our `/notebooks/EDA/eda_march_madness.ipynb` notebook provides comprehensive exploratory data analysis including:
-- Historical tournament performance patterns
-- Team statistical features correlation with winning probability
-- Season-to-season consistency analysis
-- Feature importance visualization for predictive modeling
-- Identification of upset patterns and their statistical signatures
+## 📊 Data Preparation and Exploration
+
+Initial exploration and feature understanding were conducted using the notebook [`notebooks/EDA/eda_march_madness.ipynb`](notebooks/EDA/eda_march_madness.ipynb).  
+This step focused on uncovering key patterns in historical tournament data and informing downstream feature engineering and model design.
+
+Key insights from our EDA include:
+- 📈 **Historical trends** in tournament outcomes, highlighting dominant seeds and common upset scenarios
+- 🧮 **Correlation analysis** between team-level statistical features and game outcomes
+- 🔁 **Season-to-season consistency** for metrics such as win percentage, point differentials, and strength of schedule
+- 🎯 **Feature importance visualizations** (e.g., SHAP values, permutation importance) to prioritize inputs for models
+- ⚠️ **Upset detection patterns** based on seed differences, recent form, and adjusted efficiency metrics
+
+These findings directly shaped the preprocessing pipeline and model input schema, helping us build interpretable and effective predictive models.
+
 
 ### Model Implementation
 
